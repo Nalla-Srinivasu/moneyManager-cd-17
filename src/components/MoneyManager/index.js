@@ -17,7 +17,6 @@ const transactionTypeOptions = [
   },
 ]
 
-// Write your code here
 class MoneyManager extends Component {
   state = {
     transactionsList: [],
@@ -26,13 +25,13 @@ class MoneyManager extends Component {
     optionId: transactionTypeOptions[0].optionId,
   }
 
-  deleteTransactionsItem = id => {
+  deleteTransactionItem = id => {
     const {transactionsList} = this.state
-    const updateTransactionsList = transactionsList.filter(
+    const updatedTransactionsList = transactionsList.filter(
       eachTransaction => id !== eachTransaction.id,
     )
 
-    this.setState({transactionsList: updateTransactionsList})
+    this.setState({transactionsList: updatedTransactionsList})
   }
 
   onChangeOption = event => {
@@ -60,6 +59,7 @@ class MoneyManager extends Component {
       amount: parseInt(amountInput),
       type: displayText,
     }
+
     this.setState(prevState => ({
       transactionsList: [...prevState.transactionsList, newTransaction],
       titleInput: '',

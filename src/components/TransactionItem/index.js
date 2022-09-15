@@ -17,8 +17,8 @@ const TransactionItem = props => {
       <p className="input">{type}</p>
       <div className="button-container">
         <button
-          className="delete-button"
           type="button"
+          className="delete-button"
           onClick={onDeleteTransaction}
           testid="delete"
         >
